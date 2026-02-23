@@ -1,0 +1,103 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND PINK SOFT GRADIENT */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #ffeaf5);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #444;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: hotpink;
+    transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+/* CONTAINER GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 40px;
+}
+
+/* BUBBLE CARD */
+.bubble {
+    background: white;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+    transition: 0.4s;
+}
+
+.bubble:hover {
+    transform: translateY(-10px);
+}
+
+.bubble img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+/* LINK */
+.bubble a {
+    color: hotpink;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bubble a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
