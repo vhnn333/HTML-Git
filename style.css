@@ -5,17 +5,21 @@
     <title>Profil Advhenita</title>
 
     <style>
-        /* CSS RESET */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffd6e8, #ffeaf5);
             min-height: 100vh;
+            background: radial-gradient(circle at center,
+                        #ffe6f2 0%,
+                        #f8bcd4 50%,
+                        #eaa3c2 100%);
         }
 
         /* NAVBAR */
@@ -24,7 +28,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 40px;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
         }
 
         .logo {
@@ -47,62 +54,45 @@
         /* HERO */
         .hero {
             text-align: center;
-            padding: 40px;
+            padding: 80px 20px;
         }
 
-        /* GRID */
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* CONTAINER GRID */
         .container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             padding: 40px;
         }
 
-        /* BUBBLE CARD */
+        /* CARD */
         .bubble {
-            background: white;
+            background: rgba(255,255,255,0.85);
             padding: 25px;
-            border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(255,105,180,0.25);
             transition: 0.4s;
         }
 
         .bubble:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
 
         .bubble img {
             width: 100%;
-            border-radius: 20px;
-            margin-top: 10px;
-        }
-
-        .bubble a {
-            color: hotpink;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .bubble a:hover {
-            text-decoration: underline;
-        }
-
-        /* FOTO PLAYLIST */
-        .playlist-img {
-            width: 100%;
-            border-radius: 20px;
-            margin-top: 15px;
-            transition: 0.4s;
-        }
-
-        .playlist-img:hover {
-            transform: scale(1.05);
+            border-radius: 15px;
+            margin-bottom: 15px;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         /* RESPONSIVE */
@@ -117,69 +107,62 @@
             }
         }
     </style>
-
 </head>
 
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">Advhenita</div>
         <div class="menu">
-            <a href="#">Beranda</a>
-            <a href="#">Profil</a>
-            <a href="#">Hobi</a>
-            <a href="#">Kontak</a>
+            <a href="#beranda">Beranda</a>
+            <a href="#profil">Profil</a>
+            <a href="#hobi">Hobi</a>
+            <a href="#kontak">Kontak</a>
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- BERANDA -->
+    <header class="hero" id="beranda">
         <h1>Halo, Aku Advhenita 👋</h1>
         <p>Mahasiswa yang sedang belajar HTML & CSS</p>
     </header>
 
     <section class="container">
 
-        <div class="bubble">
+        <!-- PROFIL -->
+        <div class="bubble" id="profil">
             <h3>Profil</h3>
-            <p>Aku suka tidur dan mendengarkan lagu.</p>
+            <img src="fotobunga.jpeg" alt="Foto Saya">
+            <p><b>Nama Lengkap:</b> ADVHENITA DESTRIANA WIWONTO</p>
+            <p><b>Nama Panggilan:</b> APEN, VHEAN, VHE, VHEEY, ADVHENITA</p>
+            <p><b>Tanggal Lahir:</b> 03 Desember 2026</p>
+            <p><b>Email:</b> destrianaadvhenita@gmail.com</p>
+            <p><b>Status:</b> Mahasiswa Informatika</p>
+            <p><b>Cita-cita:</b> Menjadi pribadi yang sukses dan produktif</p>
         </div>
 
-        <div class="bubble">
-            <h3>Makanan Favorit</h3>
+        <!-- HOBI -->
+        <div class="bubble" id="hobi">
+            <h3>Hobi</h3>
             <ul>
-                <li>Nasi Goreng</li>
-                <li>Mie Ayam</li>
-                <li>Sate</li>
+                <li>Scroll TikTok</li>
+                <li>Tidur</li>
+                <li>Mendengarkan Musik</li>
             </ul>
         </div>
 
-        <div class="bubble">
-            <h3>Target Tahun Ini</h3>
-            <ol>
-                <li>IPK tinggi</li>
-                <li>Menguasai materi</li>
-                <li>Lebih produktif</li>
-            </ol>
-        </div>
-
-        <div class="bubble">
-            <h3>Playlist 🎧</h3>
-            <a href="https://open.spotify.com/playlist/6BEZpYSnq70fTMAcuAV4U1?si=24f17be6e15a40cd" target="_blank">
-                Lihat Playlist Saya
-            </a>
-
-            <img src="playlist.jpeg" class="playlist-img" alt="Playlist Image">
-        </div>
-
-        <div class="bubble">
-            <h3>Foto Favorit</h3>
-            <img src="fotobunga.jpeg" alt="Foto bunga">
+        <!-- KONTAK -->
+        <div class="bubble" id="kontak">
+            <h3>Kontak</h3>
+            <p><b>Instagram:</b> @vhn.nnnn</p>
+            <p><b>Email:</b> destrianaadvhenita@gmail.com</p>
         </div>
 
     </section>
 
     <footer>
-        <p>© 2026 Advhenita</p>
+        © 2026 Advhenita
     </footer>
 
 </body>
